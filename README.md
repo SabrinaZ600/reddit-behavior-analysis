@@ -1,28 +1,89 @@
-# reddit-behavior-analysis
+# Reddit Behavior Analysis: Toxicity & Cross-Community Spillover
+
+End-to-end NLP pipeline for analyzing how participation in controversial online communities influences user behavior across mainstream Reddit spaces.
+
 ## Project Overview
 
-This project investigates how participation in toxic Reddit communities influences user behavior in mainstream subreddits. By analyzing 223 million comments across 18 subreddits, we quantify cross-community toxicity using the Toxic-Bert classifier.
+Social media behavior is highly contextual, but an open question is whether participation in toxic communities changes how users behave elsewhere.
 
-### Research Question: Are users active in controversial subreddits more likely to exhibit toxicity in mainstream subreddits?
+This project analyzes **223+ million Reddit comments across 18 subreddits** to investigate whether users active in controversial communities exhibit measurable differences in toxicity when interacting in unrelated mainstream spaces.
 
-## Architecture / Pipeline Diagram
-[User Data Collection] -> [Subreddit Classification (Mainstream vs Controversial)] -> [Toxic-Bert Classification] -> [User-Level Aggregation] -> [Analysis & Visualization]
+Rather than classifying isolated comments, the goal was to transform large-scale unstructured text into structured behavioral representations and identify broader patterns across users and communities.
 
+### Research Question
+
+**Are users active in controversial subreddits more likely to exhibit toxic behavior in mainstream subreddits?**
+
+---
+
+## System Pipeline
+
+```text
+Raw Reddit Data
+        ↓
+ConvoKit Collection & Filtering
+        ↓
+Subreddit Classification
+(Mainstream vs Controversial)
+        ↓
+Text Preprocessing
+        ↓
+Toxic-BERT Classification
+        ↓
+User-Level Feature Engineering
+        ↓
+Behavioral Analysis
+        ↓
+Visualization & Interpretation
+```
 <img width="357" height="214" alt="image" src="https://github.com/user-attachments/assets/8b8754db-50df-44c1-adde-6f5ee0634050" />
 
 Toxicity Distribution Graph
 
+---
 
-## Tech Stack
-Programming: Python;
-NLP & ML: Toxic-Bert, Transformers, ConvoKit;
-Data Analysis: Pandas, NumPy;
-Visualization: Matplotlib, Seaborn;
+## Technical Stack
 
-## Key Findings
-Users in controversial subreddits score higher mean toxicity in mainstream subreddits (0.148 vs 0.140), ~22% more comments flagged toxic.
-Behavior adapts to subreddit norms: users post less toxically outside their home subreddit.
-Dose-response effect: more controversial subreddit participation → higher mainstream toxicity (0.140 → 0.152).
+### Languages
+- Python
+
+### NLP / Machine Learning
+- Hugging Face Transformers
+- Toxic-BERT
+- ConvoKit
+
+### Data Processing
+- Pandas
+- NumPy
+
+### Visualization
+- Matplotlib
+- Seaborn
+
+---
+
+## Key Results
+
+### Cross-community toxicity spillover
+
+Users active in controversial communities exhibited higher mean toxicity scores in mainstream communities:
+
+- Controversial users: **0.148**
+- Mainstream-only users: **0.140**
+
+This corresponded to approximately **22% more comments classified as toxic.**
+
+### Behavioral adaptation effect
+
+Users moderated their behavior outside their primary communities, suggesting adaptation to different community norms.
+
+### Dose-response relationship
+
+Higher participation in controversial communities was associated with increasing toxicity levels:
+
+0.140 → 0.152
+
+suggesting a measurable relationship between participation intensity and behavioral outcomes.
 
 <img width="357" height="179" alt="image" src="https://github.com/user-attachments/assets/f766b858-80fd-4c90-bd20-900cc0717ec6" />
 
@@ -34,45 +95,40 @@ Dose-response effect: more controversial subreddit participation → higher main
 
 <img width="273" height="182" alt="image" src="https://github.com/user-attachments/assets/04e4c51e-3dfc-4cf6-98e1-c2a015ff8392" />
 
-Questions explored:
-
-- Do users from toxic communities behave differently elsewhere?
-- Does behavior transfer across communities?
-- How strongly are community-level characteristics associated with individual behavior?
-
-*Results and interpretations are discussed in the project report.*
 
 ---
 
-## Challenges
+## Technical Challenges
 
-The hardest challenge was designing a workflow that produced results I could trust.
+The most difficult challenge was not model training—it was building a workflow that generated reliable conclusions.
 
-Language is contextual and noisy:
+Challenges included:
 
-- sarcasm can resemble toxicity
-- community norms differ significantly
-- model outputs require careful interpretation
+- sarcasm and contextual language affecting toxicity scores
+- differing norms across communities
+- preserving user-level relationships across large datasets
+- preventing misleading conclusions from correlations alone
 
-This project pushed me beyond training models and toward thinking about complete ML systems, evaluation, and reproducibility.
+This project pushed me from thinking about individual model outputs to thinking about reproducible ML systems.
 
 ---
-## Future Improvements
 
-If continuing this project, I would explore:
+## Future Directions
 
-- Retrieval-augmented workflows (RAG)
+Potential extensions:
+
+- Retrieval-Augmented Generation (RAG) workflows
 - LLM-based contextual reasoning
-- Agent-based analysis pipelines
-- Improved evaluation frameworks
+- Agent-based behavioral analysis pipelines
+- Improved evaluation and benchmarking frameworks
 - Scalable deployment architecture
 
 ---
 
 ## Project Report
 
-Full project write-up:
+Full write-up:
 
-[Project Report](https://www.overleaf.com/project/69f25c25968926daaf9572b5)
+[Project Report](YOUR_LINK)
 
 ---
