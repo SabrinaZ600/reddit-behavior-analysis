@@ -14,11 +14,10 @@ Toxicity Distribution Graph
 
 
 ## Tech Stack
-Programming: Python
-NLP & ML: Toxic-Bert, Transformers, ConvoKit
-Data Analysis: Pandas, NumPy
-Visualization: Matplotlib, Seaborn
-Repository Management: GitHub
+Programming: Python;
+NLP & ML: Toxic-Bert, Transformers, ConvoKit;
+Data Analysis: Pandas, NumPy;
+Visualization: Matplotlib, Seaborn;
 
 ## Key Findings
 Users in controversial subreddits score higher mean toxicity in mainstream subreddits (0.148 vs 0.140), ~22% more comments flagged toxic.
