@@ -129,6 +129,6 @@ Potential extensions:
 
 Full write-up:
 
-[Project Report](YOUR_LINK)
+[Full Project Report (.docx)](./Social_Media_Final_Project.docx)
 
 ---
